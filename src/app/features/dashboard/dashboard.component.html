@@ -1,0 +1,38 @@
+<mat-drawer-container class="example-container bg-color " autosize>
+
+    <!-- SIDEBAR INICIO -->
+    <mat-drawer #drawer class="example-sidenav bg-color" mode="side">
+        <mat-nav-list>
+            <a mat-list-item href="...">Inicio</a>
+            <a mat-list-item href="...">Cursos</a>
+            <a mat-list-item href="...">Alumnos</a>
+        </mat-nav-list>
+    </mat-drawer>
+    <!-- SIDEBAR FIN -->
+
+    <!-- MAIN CONTENT INICIO -->
+    <div class="example-sidenav-content bg-color ">
+
+        <!-- TOOLBAR INICIO -->
+        <mat-toolbar color="primary" class="bg-color ">
+            <button mat-icon-button class="example-icon color-style" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="color-style">TIQUILIS</span>
+            <span class="example-spacer"></span>
+            <button mat-icon-button class="example-icon favorite-icon color-style" aria-label="Example icon-button with heart icon">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon color-style" aria-label="Example icon-button with share icon">
+                <mat-icon>share</mat-icon>
+            </button>
+        </mat-toolbar>
+        <!-- TOOLBAR FIN -->
+
+        <main class="p-5 bg-color ">
+            <app-alumnos/>            
+        </main>
+    </div>
+    <!-- MAIN CONTENT FIN -->
+</mat-drawer-container>
+
