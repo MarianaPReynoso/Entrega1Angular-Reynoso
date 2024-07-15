@@ -16,16 +16,24 @@ export class AlumnosComponent {
   dataSource: Estudiantes[] = [
     {
       id: 1,
-      name: 'Eddie Kaspbrak',
-      clase: '',
+      name: 'Ana Perez',
+      clase: 'A255',
       startDate: new Date(),
       endDate: new Date(),
     },
 
     {
       id: 2,
-      name: 'Richie Tozier',
-      clase: '',
+      name: 'Mateo Hernandez',
+      clase: 'B284',
+      startDate: new Date(),
+      endDate: new Date(),
+    },
+
+    {
+      id: 3,
+      name: 'Jorgelina Abba',
+      clase: 'B284',
       startDate: new Date(),
       endDate: new Date(),
     },
@@ -37,9 +45,8 @@ export class AlumnosComponent {
     this.matDialog.open(DialogoComponent).afterClosed().subscribe({
       next: (value) => {        
         this.nombreCurso = value.name;
-        // this.dataSource.push(value);
 
-        // this.dataSource = [...this.dataSource, value]; //Esto lo que hace es agregar a la tabla los nuevos cursos que creemos con el díalogo
+        this.dataSource = [...this.dataSource, value]; 
       },
     });
   }

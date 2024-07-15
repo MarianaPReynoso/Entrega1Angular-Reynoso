@@ -2,14 +2,14 @@
 
 <mat-dialog-content>
     <form [formGroup]="courseForm">
-        <mat-form-field class="w-full">
+        <mat-form-field class="w-full form">
             <mat-label>Nombre</mat-label>
             <input formControlName="name" matInput>
             <mat-error>Este campo es requerido</mat-error>
         </mat-form-field>
+        <br>
 
-        <!-- DATEPICKER (RANGO) -->
-        <mat-form-field class="w-full">
+        <mat-form-field class="w-full form">
             <mat-label>Fecha de inicio - Fecha fin</mat-label>
             <mat-date-range-input [formGroup]="courseForm" [rangePicker]="picker">
                 <input matStartDate formControlName="startDate" placeholder="Fecha de inicio">
