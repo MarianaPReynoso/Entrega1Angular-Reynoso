@@ -9,9 +9,8 @@
         </mat-form-field>
         <br>
 
-        <h4>mat-select</h4>
         <div mar-dialog-content>
-            <mat-form-field>
+            <mat-form-field class="w-full form">
                 <mat-label>Seleccione curso</mat-label>
                 <mat-select [(ngModel)]="seleccioneCurso">
                     <mat-option *ngFor="let course of courses" [value]="courses">
@@ -20,7 +19,6 @@
                 </mat-select>
             </mat-form-field>
         </div>
-            
 
         <mat-form-field class="w-full form">
             <mat-label>Fecha de inicio - Fecha fin</mat-label>

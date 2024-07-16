@@ -21,8 +21,6 @@ export class DialogoComponent {
     {viewValue: 'Photoshop'},
     {viewValue: 'Marketing Digital'},
   ];
-Cursos: any;
-
 
   constructor(
     private fb: FormBuilder,

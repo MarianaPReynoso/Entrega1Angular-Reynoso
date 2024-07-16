@@ -8,6 +8,5 @@ export interface Estudiantes {
 }
 
 export interface Cursos {
-    // value: string;
     viewValue: string;
 }
