@@ -3,11 +3,24 @@
 <mat-dialog-content>
     <form [formGroup]="courseForm">
         <mat-form-field class="w-full form">
-            <mat-label>Nombre</mat-label>
+            <mat-label>Nombre completo</mat-label>
             <input formControlName="name" matInput>
             <mat-error>Este campo es requerido</mat-error>
         </mat-form-field>
         <br>
+
+        <h4>mat-select</h4>
+        <div mar-dialog-content>
+            <mat-form-field>
+                <mat-label>Seleccione curso</mat-label>
+                <mat-select [(ngModel)]="seleccioneCurso">
+                    <mat-option *ngFor="let course of courses" [value]="courses">
+                        {{course.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+            
 
         <mat-form-field class="w-full form">
             <mat-label>Fecha de inicio - Fecha fin</mat-label>

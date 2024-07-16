@@ -3,20 +3,22 @@ import { Estudiantes } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoComponent } from './dialogo/dialogo.component';
 
+
 @Component({
   selector: 'app-alumnos',
   templateUrl: './alumnos.component.html',
-  styleUrl: './alumnos.component.scss'
+  styleUrl: './alumnos.component.scss',
 })
 
 export class AlumnosComponent {
   nombreCurso = '';
 
-  displayedColumns: string[] = ['id', 'name', 'clase', 'startDate', 'endDate', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'curso', 'clase', 'startDate', 'endDate', 'actions'];
   dataSource: Estudiantes[] = [
     {
       id: 1,
       name: 'Ana Perez',
+      curso: 'Angular',
       clase: 'A255',
       startDate: new Date(),
       endDate: new Date(),
@@ -25,6 +27,7 @@ export class AlumnosComponent {
     {
       id: 2,
       name: 'Mateo Hernandez',
+      curso: 'Programación Web',
       clase: 'B284',
       startDate: new Date(),
       endDate: new Date(),
@@ -33,7 +36,8 @@ export class AlumnosComponent {
     {
       id: 3,
       name: 'Jorgelina Abba',
-      clase: 'B284',
+      curso: 'ReactJs',
+      clase: 'C475',
       startDate: new Date(),
       endDate: new Date(),
     },

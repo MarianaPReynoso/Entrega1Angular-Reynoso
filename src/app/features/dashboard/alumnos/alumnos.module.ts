@@ -12,7 +12,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {MatSelectModule} from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AlumnosComponent, DialogoComponent],
@@ -26,7 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule, 
     MatInputModule, 
     MatDatepickerModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    MatSelectModule, 
+    FormsModule
   ],
   exports: [AlumnosComponent]
 })
