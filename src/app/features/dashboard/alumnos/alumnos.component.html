@@ -5,8 +5,11 @@
   </ng-container>
 
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> NOMBRE </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <th mat-header-cell *matHeaderCellDef> NOMBRE COMPLETO </th>
+    <!-- <td mat-cell *matCellDef="let element"> {{element.name}} </td> -->
+    <!-- <tr *ngFor="let dataSource of dataSource"> -->
+      <td mat-header-cell *matCellDef="let element"> {{element.nombreCompleto}}</td>
+    <!-- </tr> -->
   </ng-container>
 
   <ng-container matColumnDef="curso">
@@ -36,8 +39,11 @@
             <mat-icon>edit</mat-icon>
         </button>
         
-        <button (click)="deleteCourseById(element.id)" mat-icon-button>
+        <!-- <button  (click)="deleteCourseById(element.id)" mat-icon-button>
             <mat-icon>delete</mat-icon>
+        </button> -->
+        <button mat-icon-button (click)="probando()">
+          <mat-icon>delete</mat-icon>
         </button>
     </td>
   </ng-container>

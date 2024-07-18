@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
-import { Estudiantes } from '../models';
+import { Estudiantes } from '../../models';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Cursos } from '../models';
+import { Cursos } from '../../models';
 
 @Component({
   selector: 'app-dialogo',
@@ -12,14 +12,13 @@ import { Cursos } from '../models';
 
 export class DialogoComponent {
   courseForm: FormGroup;
-  seleccioneCurso: string[] = [];
 
-  courses: Cursos[] = [ //No logro hacer que la selección aparezca en la tabla una vez cerrado el diálogo
-    {viewValue: 'Angular'},
-    {viewValue: 'ReactJS'},
-    {viewValue: 'Programación Web'},
-    {viewValue: 'Photoshop'},
-    {viewValue: 'Marketing Digital'},
+  courses: Cursos[] = [
+    {value: 'Angular', viewValue: 'Angular'},
+    {value: 'ReactJS', viewValue: 'ReactJS'},
+    {value: 'Programación Web', viewValue: 'Programación Web'},
+    {value: 'Photoshop', viewValue: 'Photoshop'},
+    {value: 'Marketing', viewValue: 'Marketing Digital'},
   ];
 
   constructor(
@@ -30,7 +29,8 @@ export class DialogoComponent {
   ) {
     this.courseForm = this.fb.group({
       name: [null, Validators.required],
-      curso: [],
+      lastName: [null, Validators.required],
+      curso: [Validators.required],
       startDate: [],
       endDate: [],
     });
@@ -41,7 +41,6 @@ export class DialogoComponent {
   }
 
   onSubmit(): void {
-    this.dialogRef.close(this.seleccioneCurso)
     if(this.courseForm.valid) {
       this.matDialogRef.close(this.courseForm.value);
     } else {
@@ -49,13 +48,3 @@ export class DialogoComponent {
     }
   }  
 }
-
-// export class SelectDialogo{
-//   selectedValue: string;
-
-//   cursos: Cursos[] = [
-//     {value: 'steak-0', viewValue: 'Steak'},
-//     {value: 'pizza-1', viewValue: 'Pizza'},
-//     {value: 'tacos-2', viewValue: 'Tacos'},
-//   ];
-// }

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Estudiantes } from './models';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogoComponent } from './dialogo/dialogo.component';
+import { DialogoComponent } from './components/dialogo/dialogo.component';
+import { generarClase, generarId } from '../../shared/utils';
+import { MiniDialogoComponent } from './components/mini-dialogo/mini-dialogo.component';
 
 
 @Component({
@@ -17,7 +19,8 @@ export class AlumnosComponent {
     dataSource: Estudiantes[] = [
         {
         id: 1,
-        name: 'Ana Perez',
+        name: 'Ana',
+        lastName: 'Perez',
         curso: 'Angular',
         clase: 'A255',
         startDate: new Date(),
@@ -26,7 +29,8 @@ export class AlumnosComponent {
 
         {
         id: 2,
-        name: 'Mateo Hernandez',
+        name: 'Mateo ',
+        lastName: 'Hernandez',
         curso: 'Programación Web',
         clase: 'B284',
         startDate: new Date(),
@@ -35,7 +39,8 @@ export class AlumnosComponent {
 
         {
         id: 3,
-        name: 'Jorgelina Abba',
+        name: 'Jorgelina',
+        lastName: 'Abba',
         curso: 'ReactJs',
         clase: 'C475',
         startDate: new Date(),
@@ -50,6 +55,8 @@ export class AlumnosComponent {
             next: (value) => {        
                 this.nombreCurso = value.name;
 
+                value['id'] = generarId(2);
+                value['clase'] = generarClase(4);
                 this.dataSource = [...this.dataSource, value]; 
             },
         });
@@ -66,15 +73,17 @@ export class AlumnosComponent {
     }
 
     deleteCourseById(id: number) {
-        if(confirm('¿Está seguro de querer eliminar este alumno?')){
+        if(confirm()) {
             this.dataSource = this.dataSource.filter((el) => el.id != id);
         } 
     }
-}
+
+    probando(): void {
+        this.matDialog.open(MiniDialogoComponent)
+        }
+    }
 
 //Agregar:
-//Pipe personalizado
-// Directiva personalizada
+//Hacer que el pipe personalizado funcione
 // Dialog para consultar si se quiere eliminar un alumno
-// Hacer el form reactive
-// Hacer que genere ID y Clase auto
+// Hacer que genere ID que vaya enumerando correctamente

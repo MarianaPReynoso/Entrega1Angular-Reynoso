@@ -3,8 +3,14 @@
 <mat-dialog-content>
     <form [formGroup]="courseForm">
         <mat-form-field class="w-full form">
-            <mat-label>Nombre completo</mat-label>
+            <mat-label>Nombre</mat-label>
             <input formControlName="name" matInput>
+            <mat-error>Este campo es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-full form">
+            <mat-label>Apellido</mat-label>
+            <input formControlName="lastName" matInput>
             <mat-error>Este campo es requerido</mat-error>
         </mat-form-field>
         <br>
@@ -12,8 +18,8 @@
         <div mar-dialog-content>
             <mat-form-field class="w-full form">
                 <mat-label>Seleccione curso</mat-label>
-                <mat-select [(ngModel)]="seleccioneCurso">
-                    <mat-option *ngFor="let course of courses" [value]="courses">
+                <mat-select formControlName="curso">
+                    <mat-option *ngFor="let course of courses" [value]="course.value">
                         {{course.viewValue}}
                     </mat-option>
                 </mat-select>
@@ -37,4 +43,6 @@
     <button mat-dialog-close mat-button>Cancelar</button>
     <button (click)="onSubmit()" mat-button>Guardar</button>
 </mat-dialog-actions>
+
+
 
