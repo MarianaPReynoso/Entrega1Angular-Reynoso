@@ -72,18 +72,16 @@ export class AlumnosComponent {
         });
     }
 
-    deleteCourseById(id: number) {
-        if(confirm()) {
-            this.dataSource = this.dataSource.filter((el) => el.id != id);
-        } 
+    borrarCursoById(id: number): void {
+        this.matDialog.open(MiniDialogoComponent).afterClosed().subscribe({
+            next:
+            () => this.dataSource = this.dataSource.filter((el) => el.id != id)
+        })
     }
 
     probando(): void {
-        this.matDialog.open(MiniDialogoComponent)
+        
         }
-    }
+}
 
-//Agregar:
-//Hacer que el pipe personalizado funcione
-// Dialog para consultar si se quiere eliminar un alumno
-// Hacer que genere ID que vaya enumerando correctamente
+

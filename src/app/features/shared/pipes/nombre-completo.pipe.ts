@@ -8,6 +8,6 @@ export class NombreCompletoPipe implements PipeTransform {
 
   transform(value: {name: string, lastName: string}): string {
     if (!value) return '';
-    return '${value.name} ${value.lastName}';
+    return `${value.name} ${value.lastName}`
   }
 }
